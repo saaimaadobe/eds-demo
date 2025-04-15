@@ -1,7 +1,6 @@
 import { getHref, getOrigin } from './scripts.js';
 
 const ALLOWED_CONFIGS = ['prod', 'stage', 'dev'];
-
 /**
  * This function calculates the environment in which the site is running based on the URL.
  * It defaults to 'prod'. In non 'prod' environments, the value can be overwritten using
