@@ -39,7 +39,7 @@ export function getOrigin() {
   const { location } = window;
   return location.href === 'about:srcdoc' ? window.parent.location.origin : location.origin;
 }
-
+ 
 /**
  * Returns the true of the current page in the browser.mac
  * If the page is running in a iframe with srcdoc,
@@ -48,12 +48,11 @@ export function getOrigin() {
  */
 export function getHref() {
   if (window.location.href !== 'about:srcdoc') return window.location.href;
-
+ 
   const { location: parentLocation } = window.parent;
   const urlParams = new URLSearchParams(parentLocation.search);
   return `${parentLocation.origin}${urlParams.get('path')}`;
 }
-
 /**
  * Gets all the metadata elements that are in the given scope.
  * @param {String} scope The scope/prefix for the metadata
